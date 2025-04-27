@@ -1,28 +1,32 @@
 
-import React from "react";
 import Head from "next/head";
 import Layout from "@/components/Layout/Layout";
-import { Lock } from "lucide-react";
+import { GatedContent } from "@/components/GatedContent/GatedContent";
 
 export default function StrategicOpportunities() {
   return (
     <>
       <Head>
-        <title>Strategic Opportunities | SOL Modern</title>
-        <meta name="description" content="Strategic Opportunities for SOL Modern Lease-Up Strategy" />
+        <title>Strategic Opportunities - SOL Modern</title>
+        <meta name="description" content="Strategic opportunities analysis for SOL Modern" />
       </Head>
       
       <Layout>
-        <div className="max-w-4xl mx-auto">
-          <div className="flex items-center gap-2 mb-6">
-            <h1 className="text-3xl font-bold">Strategic Opportunities</h1>
-            <Lock size={20} className="text-gray-400" />
-          </div>
+        <div className="container mx-auto py-8">
+          <h1 className="text-4xl font-bold mb-8">Strategic Opportunities</h1>
           
-          <div className="p-12 border border-dashed border-gray-200 rounded-lg flex flex-col items-center justify-center gap-4">
-            <Lock size={32} className="text-gray-300" />
-            <p className="text-gray-400 text-center">This content is gated</p>
-          </div>
+          <GatedContent title="Strategic Opportunities">
+            <div className="prose max-w-none">
+              <h2>Unit Features and Finishing Levels</h2>
+              <h3>Opportunity 1: Superior Sound Insulation</h3>
+              <p>Gap Identified: Noise complaints are common across multiple properties...</p>
+              
+              <h3>Opportunity 2: Premium Kitchen Package</h3>
+              <p>Gap Identified: While most properties offer stainless steel appliances...</p>
+              
+              {/* Rest of the content from the PDF */}
+            </div>
+          </GatedContent>
         </div>
       </Layout>
     </>

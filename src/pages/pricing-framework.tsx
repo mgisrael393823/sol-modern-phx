@@ -1,28 +1,32 @@
 
-import React from "react";
 import Head from "next/head";
 import Layout from "@/components/Layout/Layout";
-import { Lock } from "lucide-react";
+import { GatedContent } from "@/components/GatedContent/GatedContent";
 
 export default function PricingFramework() {
   return (
     <>
       <Head>
-        <title>Pricing & Incentive Framework | SOL Modern</title>
-        <meta name="description" content="Pricing & Incentive Framework for SOL Modern Lease-Up Strategy" />
+        <title>Pricing & Incentive Framework - SOL Modern</title>
+        <meta name="description" content="Pricing and incentive framework for SOL Modern" />
       </Head>
       
       <Layout>
-        <div className="max-w-4xl mx-auto">
-          <div className="flex items-center gap-2 mb-6">
-            <h1 className="text-3xl font-bold">Pricing & Incentive Framework</h1>
-            <Lock size={20} className="text-gray-400" />
-          </div>
+        <div className="container mx-auto py-8">
+          <h1 className="text-4xl font-bold mb-8">Pricing & Incentive Framework</h1>
           
-          <div className="p-12 border border-dashed border-gray-200 rounded-lg flex flex-col items-center justify-center gap-4">
-            <Lock size={32} className="text-gray-300" />
-            <p className="text-gray-400 text-center">This content is gated</p>
-          </div>
+          <GatedContent title="Pricing & Incentive Framework">
+            <div className="prose max-w-none">
+              <h2>Optimal Base Rent Positioning</h2>
+              <h3>Unit Type Pricing Strategy</h3>
+              <p>Studios (Estimated 500-600 sq ft)...</p>
+              
+              <h3>Strategic Premium Allocation</h3>
+              <p>View Premiums...</p>
+              
+              {/* Rest of the content from the PDF */}
+            </div>
+          </GatedContent>
         </div>
       </Layout>
     </>
