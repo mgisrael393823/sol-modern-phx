@@ -2,6 +2,8 @@
 import React from "react";
 import Head from "next/head";
 import Layout from "@/components/Layout/Layout";
+import { Heading } from "@/components/ui/Heading";
+import { HighlightBox } from "@/components/ui/HighlightBox";
 
 export default function ExecutiveSummary() {
   return (
@@ -13,113 +15,150 @@ export default function ExecutiveSummary() {
       
       <Layout>
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl font-bold mb-6">Executive Summary</h1>
+          <Heading level={1}>Executive Summary</Heading>
           
-          <div className="bg-gray-50 border-l-4 border-gray-900 p-6 mb-8">
+          <HighlightBox>
             <p className="text-lg font-medium">
-              SOL Modern enters a competitive multifamily market with distinct advantages in design, amenities, and location. This blueprint outlines a strategic approach to achieve optimal lease-up velocity and revenue performance.
+              SOL Modern is poised to enter the Downtown Phoenix multifamily market at a pivotal time. Located in the vibrant Roosevelt Row submarket at 50 E Fillmore St, this 747-unit development will be competing in a market characterized by high construction activity, elevated vacancy rates, and strong but uneven absorption.
             </p>
-          </div>
+          </HighlightBox>
           
-          <div className="space-y-8">
+          <div className="space-y-12">
             <section>
-              <h2 className="text-2xl font-semibold mb-4">Key Market Findings</h2>
-              <div className="space-y-4">
-                <div className="flex gap-3">
-                  <div className="w-1 bg-gray-200 rounded-full"></div>
-                  <div>
-                    <h3 className="font-medium text-lg">Demand Indicators</h3>
-                    <p className="text-gray-700">
-                      The target submarket shows strong absorption rates with 94% average occupancy across competitive set. Demographic trends favor SOL Modern's unit mix and amenity offerings.
-                    </p>
-                  </div>
+              <Heading level={2}>SWOT Analysis</Heading>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div>
+                  <Heading level={3}>Strengths</Heading>
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>Prime location in the arts-centric Roosevelt Row district</li>
+                    <li>Newest property in the submarket (2025 delivery)</li>
+                    <li>Larger unit count (747) allowing for more extensive amenities</li>
+                    <li>Opportunity to incorporate latest design trends and technology</li>
+                  </ul>
                 </div>
                 
-                <div className="flex gap-3">
-                  <div className="w-1 bg-gray-200 rounded-full"></div>
-                  <div>
-                    <h3 className="font-medium text-lg">Competitive Position</h3>
-                    <p className="text-gray-700">
-                      SOL Modern offers superior finishes and amenities compared to 80% of the competitive set, positioning it in the premium tier of the market.
-                    </p>
-                  </div>
+                <div>
+                  <Heading level={3}>Weaknesses</Heading>
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>Entering a market with elevated vacancy rates</li>
+                    <li>Significant new supply in the immediate area</li>
+                    <li>Higher price point ($1,965 to $4,645) in a price-sensitive market</li>
+                    <li>Unproven property with no established reputation</li>
+                  </ul>
                 </div>
                 
-                <div className="flex gap-3">
-                  <div className="w-1 bg-gray-200 rounded-full"></div>
-                  <div>
-                    <h3 className="font-medium text-lg">Pricing Opportunity</h3>
-                    <p className="text-gray-700">
-                      Analysis indicates potential for 8-12% premium over market averages for comparable units, with strongest demand projected for 1BR and 2BR floor plans.
-                    </p>
-                  </div>
+                <div>
+                  <Heading level={3}>Opportunities</Heading>
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>Growing demand for remote work-friendly apartments</li>
+                    <li>Authentic integration with the arts community</li>
+                    <li>Enhanced sound insulation to address common noise complaints</li>
+                    <li>Wellness-focused amenities to differentiate from competitors</li>
+                    <li>Service-oriented management to address common pain points</li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <Heading level={3}>Threats</Heading>
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>Continued oversupply in the Downtown Phoenix market</li>
+                    <li>Potential for further rent concessions from competitors</li>
+                    <li>Economic uncertainty affecting luxury rental demand</li>
+                    <li>Competition from newer suburban developments</li>
+                    <li>Rising construction costs affecting project delivery</li>
+                  </ul>
                 </div>
               </div>
             </section>
             
             <section>
-              <h2 className="text-2xl font-semibold mb-4">Strategic Recommendations</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="border border-gray-200 rounded-lg p-5">
-                  <h3 className="font-medium text-lg mb-2">Phased Pricing Strategy</h3>
-                  <p className="text-gray-700">
-                    Implement tiered pricing structure across lease-up phases to balance velocity and revenue optimization.
-                  </p>
+              <Heading level={2}>Strategic Recommendations</Heading>
+              
+              <p className="mb-6">Based on our analysis, we recommend SOL Modern pursue the following strategic opportunities:</p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div className="bg-white border border-gray-200 rounded-sm p-5 hover:shadow-md transition-shadow">
+                  <Heading level={4} className="mb-3">Enhanced Living Environments</Heading>
+                  <ul className="list-disc pl-5 space-y-1 text-sm">
+                    <li>Superior sound insulation to address the most common complaint</li>
+                    <li>Premium kitchen package exceeding competitor offerings</li>
+                    <li>Comprehensive technology integration as standard</li>
+                  </ul>
                 </div>
                 
-                <div className="border border-gray-200 rounded-lg p-5">
-                  <h3 className="font-medium text-lg mb-2">Targeted Marketing</h3>
-                  <p className="text-gray-700">
-                    Focus on digital-first approach with emphasis on lifestyle and community aspects that differentiate SOL Modern.
-                  </p>
+                <div className="bg-white border border-gray-200 rounded-sm p-5 hover:shadow-md transition-shadow">
+                  <Heading level={4} className="mb-3">Lifestyle-Centric Amenities</Heading>
+                  <ul className="list-disc pl-5 space-y-1 text-sm">
+                    <li>Wellness-focused facilities beyond standard fitness centers</li>
+                    <li>Best-in-class work-from-home spaces reflecting remote work trends</li>
+                    <li>Distinctive social spaces fostering community</li>
+                  </ul>
                 </div>
                 
-                <div className="border border-gray-200 rounded-lg p-5">
-                  <h3 className="font-medium text-lg mb-2">Amenity Activation</h3>
-                  <p className="text-gray-700">
-                    Strategically showcase signature amenities through curated events and digital content to drive interest.
-                  </p>
+                <div className="bg-white border border-gray-200 rounded-sm p-5 hover:shadow-md transition-shadow">
+                  <Heading level={4} className="mb-3">Service Excellence</Heading>
+                  <ul className="list-disc pl-5 space-y-1 text-sm">
+                    <li>Hospitality-inspired management model with guaranteed response times</li>
+                    <li>Comprehensive lifestyle services package</li>
+                    <li>Transparent billing practices with no hidden fees</li>
+                  </ul>
                 </div>
                 
-                <div className="border border-gray-200 rounded-lg p-5">
-                  <h3 className="font-medium text-lg mb-2">Concession Strategy</h3>
-                  <p className="text-gray-700">
-                    Limited, strategic concessions focused on lease term rather than rate reduction to maintain long-term value.
-                  </p>
+                <div className="bg-white border border-gray-200 rounded-sm p-5 hover:shadow-md transition-shadow">
+                  <Heading level={4} className="mb-3">Authentic Community Connection</Heading>
+                  <ul className="list-disc pl-5 space-y-1 text-sm">
+                    <li>Integration with Roosevelt Row arts community</li>
+                    <li>Artist-in-residence program and gallery space</li>
+                    <li>Targeted digital presence highlighting neighborhood connection</li>
+                  </ul>
                 </div>
               </div>
             </section>
             
             <section>
-              <h2 className="text-2xl font-semibold mb-4">Projected Performance</h2>
-              <div className="overflow-x-auto">
+              <Heading level={2}>Property Overview</Heading>
+              
+              <div className="overflow-x-auto mb-6">
                 <table className="min-w-full border-collapse">
-                  <thead>
-                    <tr className="bg-gray-50">
-                      <th className="border border-gray-200 px-4 py-3 text-left">Metric</th>
-                      <th className="border border-gray-200 px-4 py-3 text-left">Target</th>
-                      <th className="border border-gray-200 px-4 py-3 text-left">Timeline</th>
-                    </tr>
-                  </thead>
-                  <tbody>
+                  <tbody className="divide-y divide-gray-200">
                     <tr>
-                      <td className="border border-gray-200 px-4 py-3">Stabilization</td>
-                      <td className="border border-gray-200 px-4 py-3">93% Occupancy</td>
-                      <td className="border border-gray-200 px-4 py-3">10-12 Months</td>
-                    </tr>
-                    <tr className="bg-gray-50">
-                      <td className="border border-gray-200 px-4 py-3">Lease-Up Velocity</td>
-                      <td className="border border-gray-200 px-4 py-3">18-22 Units/Month</td>
-                      <td className="border border-gray-200 px-4 py-3">Months 1-6</td>
+                      <td className="py-3 pr-8 font-medium">Location</td>
+                      <td className="py-3">50 E Fillmore St, Phoenix (Roosevelt Row submarket)</td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-200 px-4 py-3">Revenue Premium</td>
-                      <td className="border border-gray-200 px-4 py-3">8-12% Above Market</td>
-                      <td className="border border-gray-200 px-4 py-3">At Stabilization</td>
+                      <td className="py-3 pr-8 font-medium">Unit Mix</td>
+                      <td className="py-3">Studio to 3-bedroom units</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 pr-8 font-medium">Rental Rates</td>
+                      <td className="py-3">$1,965 to $4,645</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 pr-8 font-medium">Status</td>
+                      <td className="py-3">Under construction</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 pr-8 font-medium">Units</td>
+                      <td className="py-3">747</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 pr-8 font-medium">Expected Delivery</td>
+                      <td className="py-3">2025</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 pr-8 font-medium">Developer</td>
+                      <td className="py-3">bKL Architecture, LLC</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
+              
+              <HighlightBox variant="secondary">
+                <p className="text-sm">
+                  This executive summary provides an overview of the complete strategic blueprint. Navigate through the sections on the left to explore detailed market intelligence, competitive analysis, and our recommended strategies for SOL Modern's successful lease-up.
+                </p>
+              </HighlightBox>
             </section>
           </div>
         </div>
