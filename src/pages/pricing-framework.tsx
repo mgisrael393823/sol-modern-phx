@@ -1,11 +1,13 @@
 
+"use client"
+
+import React from "react";
 import Head from "next/head";
 import Layout from "@/components/Layout/Layout";
-import { GatedContent } from "@/components/GatedContent/GatedContent";
 import { Heading } from "@/components/ui/Heading";
 import { HighlightBox } from "@/components/ui/HighlightBox";
 
-export default function PricingFramework() {
+export default function PricingFrameworkPage() {
   return (
     <>
       <Head>
@@ -14,7 +16,7 @@ export default function PricingFramework() {
       </Head>
       
       <Layout>
-        <div className="max-w-4xl mx-auto">
+        <main className="max-w-4xl mx-auto">
           <Heading level={1}>Pricing & Incentive Framework</Heading>
           
           <HighlightBox>
@@ -23,22 +25,17 @@ export default function PricingFramework() {
             </p>
           </HighlightBox>
           
-          <GatedContent 
-            title="Pricing & Incentive Framework"
-            teaser="Our pricing framework outlines a strategic approach to base rent positioning, premium allocation, and incentive structure that balances competitive positioning with revenue optimization, tailored specifically to the Roosevelt Row market conditions."
-          >
-            <div className="prose max-w-none">
-              <h2>Optimal Base Rent Positioning</h2>
-              <h3>Unit Type Pricing Strategy</h3>
-              <p>Studios (Estimated 500-600 sq ft)...</p>
-              
-              <h3>Strategic Premium Allocation</h3>
-              <p>View Premiums...</p>
-              
-              {/* Rest of the content from the PDF */}
-            </div>
-          </GatedContent>
-        </div>
+          <div className="p-6 bg-[#FCFAF5] border border-[#E8E3D9] rounded-sm mt-10">
+            <h2 className="text-2xl font-semibold mb-4 text-[#333333]">Premium Content</h2>
+            <p className="mb-4 text-lg text-[#333333]">
+              Our pricing framework outlines a strategic approach to base rent positioning, premium allocation, and incentive structure that balances competitive positioning with revenue optimization, tailored specifically to the Roosevelt Row market conditions.
+            </p>
+            
+            <p className="text-[#777777]">
+              The complete Pricing & Incentive Framework is available in the premium version of this report.
+            </p>
+          </div>
+        </main>
       </Layout>
     </>
   );
