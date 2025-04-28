@@ -2,6 +2,8 @@
 import Head from "next/head";
 import Layout from "@/components/Layout/Layout";
 import { GatedContent } from "@/components/GatedContent/GatedContent";
+import { Heading } from "@/components/ui/Heading";
+import { HighlightBox } from "@/components/ui/HighlightBox";
 
 export default function GoToMarket() {
   return (
@@ -12,10 +14,19 @@ export default function GoToMarket() {
       </Head>
       
       <Layout>
-        <div className="container mx-auto py-8">
-          <h1 className="text-4xl font-bold mb-8">Go-to-Market Roadmap</h1>
+        <div className="max-w-4xl mx-auto">
+          <Heading level={1}>Go-to-Market Roadmap</Heading>
           
-          <GatedContent title="Go-to-Market Roadmap">
+          <HighlightBox>
+            <p className="text-lg">
+              This roadmap outlines the phased implementation strategy for SOL Modern's market entry, with specific timelines, marketing channels, and targeting approaches to achieve optimal lease-up velocity.
+            </p>
+          </HighlightBox>
+          
+          <GatedContent 
+            title="Go-to-Market Roadmap"
+            teaser="The Go-to-Market Roadmap provides a comprehensive, phased implementation plan for SOL Modern's lease-up strategy, including detailed timelines, marketing channels, and audience targeting approaches to optimize occupancy rates and revenue."
+          >
             <div className="prose max-w-none">
               <h2>Pre-Leasing Phase (3-6 Months Prior to Opening)</h2>
               <h3>Timing & Milestones</h3>

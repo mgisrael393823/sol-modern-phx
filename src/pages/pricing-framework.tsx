@@ -2,6 +2,8 @@
 import Head from "next/head";
 import Layout from "@/components/Layout/Layout";
 import { GatedContent } from "@/components/GatedContent/GatedContent";
+import { Heading } from "@/components/ui/Heading";
+import { HighlightBox } from "@/components/ui/HighlightBox";
 
 export default function PricingFramework() {
   return (
@@ -12,10 +14,19 @@ export default function PricingFramework() {
       </Head>
       
       <Layout>
-        <div className="container mx-auto py-8">
-          <h1 className="text-4xl font-bold mb-8">Pricing & Incentive Framework</h1>
+        <div className="max-w-4xl mx-auto">
+          <Heading level={1}>Pricing & Incentive Framework</Heading>
           
-          <GatedContent title="Pricing & Incentive Framework">
+          <HighlightBox>
+            <p className="text-lg">
+              Our strategic pricing model positions SOL Modern to balance competitive market rates with premium value, incorporating an optimized incentive structure to drive lease-up velocity while protecting long-term revenue.
+            </p>
+          </HighlightBox>
+          
+          <GatedContent 
+            title="Pricing & Incentive Framework"
+            teaser="Our pricing framework outlines a strategic approach to base rent positioning, premium allocation, and incentive structure that balances competitive positioning with revenue optimization, tailored specifically to the Roosevelt Row market conditions."
+          >
             <div className="prose max-w-none">
               <h2>Optimal Base Rent Positioning</h2>
               <h3>Unit Type Pricing Strategy</h3>
