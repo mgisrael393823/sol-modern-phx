@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Navigation } from "./Navigation";
+import { StaticNavigation } from "./StaticNavigation";
 import { Montserrat } from "next/font/google";
 
 // Font implementation matching SOL Modern's branding
@@ -14,7 +14,7 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen bg-[#FCFAF5] flex">
-      <Navigation />
+      <StaticNavigation />
       <main className="flex-1 pl-64 py-12">
         <div className="container mx-auto px-6 md:px-8 max-w-6xl">
           <div className={`${bodyFont.className} text-[#333333]`}>
