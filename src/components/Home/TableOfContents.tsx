@@ -80,9 +80,9 @@ export default function TableOfContents() {
   return (
     <section className="max-w-5xl mx-auto py-24 px-4">
       <div className="text-center mb-16">
-        <h4 className={`${headingFont.className} text-sm uppercase tracking-widest text-[#E57161] font-medium mb-1`}>ACCESS THE BLUEPRINT</h4>
+        <h4 className="section-title">ACCESS THE BLUEPRINT</h4>
         <div className="h-0.5 w-32 bg-[#E57161] mx-auto mb-6"></div>
-        <h2 className={`${headingFont.className} text-3xl uppercase tracking-wide mb-4 text-[#333333]`}>BLUEPRINT SECTIONS</h2>
+        <h2 className="heading-2 uppercase mb-4">BLUEPRINT SECTIONS</h2>
         <p className={`${bodyFont.className} text-[#777777] max-w-2xl mx-auto`}>
           Navigate through our comprehensive strategic framework, with premium sections gated for client access
         </p>
@@ -96,10 +96,10 @@ export default function TableOfContents() {
             <Link 
               href={section.path} 
               key={section.id}
-              className="group bg-white border border-[#E8E3D9] rounded-sm p-6 transition-all hover:border-[#E57161] flex flex-col h-full relative overflow-hidden"
+              className="group content-box flex flex-col h-full relative overflow-hidden transition-all hover:border-[#E57161]"
             >
               {section.id % 3 === 0 && (
-                <div className="absolute -right-8 -bottom-8 w-24 h-24 rounded-full bg-[#E57161] opacity-5"></div>
+                <div className="decorative-circle"></div>
               )}
               
               <div className="flex items-start mb-5">
@@ -129,9 +129,9 @@ export default function TableOfContents() {
         })}
       </div>
       
-      <div className="mt-20 bg-[#FCFAF5] border border-[#E8E3D9] p-8 rounded-sm text-center">
-        <h3 className={`${headingFont.className} text-xl uppercase tracking-wide mb-3 text-[#333333]`}>PREMIUM SECTIONS</h3>
-        <p className={`${bodyFont.className} text-[#777777] mb-4 max-w-2xl mx-auto`}>
+      <div className="mt-20 content-box-highlight p-8 text-center">
+        <h3 className="heading-3 uppercase mb-4">PREMIUM SECTIONS</h3>
+        <p className={`${bodyFont.className} text-[#777777] mb-5 max-w-2xl mx-auto`}>
           Gated sections contain our proprietary strategic frameworks and implementation plans.
           Access is available to clients and qualified prospects.
         </p>

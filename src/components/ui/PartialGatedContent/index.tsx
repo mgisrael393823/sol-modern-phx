@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
@@ -84,7 +86,7 @@ export function PartialGatedContent({
       
       {/* Blurred gated content */}
       <div 
-        className="blur-md pointer-events-none opacity-30" 
+        className="content-blur pointer-events-none" 
         aria-hidden="true"
       >
         {gatedContent}
@@ -95,10 +97,11 @@ export function PartialGatedContent({
         onClick={() => setIsDialogOpen(true)}
       >
         <Button 
-          size="lg"
-          className="bg-[#E57161] hover:bg-[#D05A4B] text-white font-medium px-10 py-6 rounded-sm tracking-widest uppercase text-sm"
+          variant="outline"
+          className="border-[#E57161] hover:bg-[#E57161] hover:bg-opacity-5 text-[#E57161] font-medium px-8 py-3 rounded-sm tracking-wider uppercase text-xs flex items-center"
         >
-          UNLOCK COMPLETE {title}
+          <span>Access Full {title}</span>
+          <ArrowRight className="h-3.5 w-3.5 ml-2" />
         </Button>
       </div>
 

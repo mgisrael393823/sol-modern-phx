@@ -106,4 +106,57 @@ body {
   .container {
     @apply mx-auto px-4 md:px-6 lg:px-8 max-w-7xl w-full;
   }
+  
+  /* Consistent typography classes */
+  .heading-1 {
+    @apply text-4xl md:text-5xl tracking-wide font-semibold text-[#333333];
+  }
+  
+  .heading-2 {
+    @apply text-3xl tracking-wide font-semibold text-[#333333];
+  }
+  
+  .heading-3 {
+    @apply text-2xl font-semibold text-[#333333];
+  }
+  
+  .heading-4 {
+    @apply text-lg uppercase tracking-wide font-semibold text-[#333333];
+  }
+  
+  .section-title {
+    @apply text-sm uppercase tracking-widest font-medium text-[#E57161] mb-1;
+  }
+  
+  /* Consistent spacing */
+  .section-spacing {
+    @apply py-12;
+  }
+  
+  .content-box {
+    @apply border border-[#E8E3D9] rounded-sm bg-white p-6;
+  }
+  
+  .content-box-highlight {
+    @apply border border-[#E8E3D9] rounded-sm bg-[#FCFAF5] p-6 relative overflow-hidden;
+  }
+  
+  /* Consistent decorative elements */
+  .decorative-circle {
+    @apply absolute -right-8 -bottom-8 w-32 h-32 rounded-full bg-[#E57161] opacity-5;
+  }
+  
+  /* Consistent buttons */
+  .btn-primary {
+    @apply bg-[#E57161] hover:bg-[#D05A4B] text-white font-medium px-6 py-3 rounded-sm tracking-wider uppercase text-sm transition-colors;
+  }
+  
+  .btn-outline {
+    @apply border border-[#E57161] text-[#E57161] hover:bg-[#E57161] hover:bg-opacity-5 font-medium px-5 py-2.5 rounded-sm tracking-wide uppercase text-sm transition-colors;
+  }
+  
+  /* Consistent gated content blur */
+  .content-blur {
+    @apply blur-[3px] opacity-50;
+  }
 }

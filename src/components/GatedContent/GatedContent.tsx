@@ -1,3 +1,4 @@
+"use client"
 
 import { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
@@ -21,8 +22,8 @@ export function GatedContent({ children, title, teaser }: GatedContentProps) {
     <div className="relative">
       {/* Teaser content - not blurred */}
       <div className="mb-10 p-8 bg-[#FCFAF5] border border-[#E8E3D9] rounded-sm relative overflow-hidden">
-        <div className="absolute -right-8 -bottom-8 w-32 h-32 rounded-full bg-[#E57161] opacity-5"></div>
-        <h3 className={`${headingFont.className} text-lg uppercase tracking-wide mb-3 text-[#333333] flex items-center`}>
+        <div className="decorative-circle"></div>
+        <h3 className={`${headingFont.className} text-lg uppercase tracking-wide mb-4 text-[#333333] flex items-center`}>
           <Lock className="h-4 w-4 mr-2 text-[#E57161]" />
           PREMIUM CONTENT
         </h3>
@@ -31,7 +32,7 @@ export function GatedContent({ children, title, teaser }: GatedContentProps) {
       
       {/* Blurred content */}
       <div 
-        className="blur-md pointer-events-none opacity-30" 
+        className="content-blur pointer-events-none" 
         aria-hidden="true"
       >
         {children}
@@ -43,7 +44,7 @@ export function GatedContent({ children, title, teaser }: GatedContentProps) {
       >
         <Button 
           size="lg"
-          className="bg-[#E57161] hover:bg-[#D05A4B] text-white font-medium px-10 py-6 rounded-sm tracking-widest uppercase text-sm"
+          className="btn-primary px-10 py-6"
         >
           UNLOCK {title}
         </Button>
@@ -57,9 +58,9 @@ export function GatedContent({ children, title, teaser }: GatedContentProps) {
           <div className="space-y-5">
             <p className={`${bodyFont.className} text-[#777777]`}>The <span className="font-medium text-[#333333]">{title}</span> section contains proprietary strategies and actionable recommendations that are reserved for our clients and partners.</p>
             
-            <div className="bg-white p-5 rounded-sm border border-[#E8E3D9]">
+            <div className="bg-white p-6 rounded-sm border border-[#E8E3D9]">
               <p className={`${bodyFont.className} font-medium text-[#333333] text-center uppercase tracking-wider text-xs`}>To access this content, please email:</p>
-              <p className="text-lg my-3 text-center text-[#E57161] font-medium">misrael00@gmail.com</p>
+              <p className="text-lg my-4 text-center text-[#E57161] font-medium">misrael00@gmail.com</p>
               <p className={`${bodyFont.className} text-xs text-[#A0A0A0] text-center`}>(We typically respond within 1 business day with access instructions)</p>
             </div>
             

@@ -1,4 +1,7 @@
+"use client";
+
 import React from 'react';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { Montserrat } from 'next/font/google';
 import { 
@@ -25,7 +28,9 @@ const navItems = [
   { name: 'OPPORTUNITY MAP', path: '/opportunity-map', icon: Map },
 ];
 
-export function StaticNavigation() {
+export function NavigationClient() {
+  const pathname = usePathname();
+  
   return (
     <nav className='w-64 bg-[#FCFAF5] border-r border-[#E8E3D9] h-screen fixed left-0 top-0 overflow-y-auto'>
       <div className='h-full flex flex-col'>
@@ -42,8 +47,9 @@ export function StaticNavigation() {
             <p className={`${bodyFont.className} text-xs uppercase tracking-widest text-[#777777] px-3 mb-3`}>Blueprint Contents</p>
           </div>
           
-          <div className='space-y-1'>
+          <div className='space-y-2'>
             {navItems.map((item) => {
+              const isActive = pathname === item.path;
               const Icon = item.icon;
               
               return (
@@ -52,13 +58,15 @@ export function StaticNavigation() {
                   href={item.path}
                   className={`
                     flex items-center px-3 py-2.5 text-xs font-medium tracking-wider transition-all
-                    text-[#777777] hover:text-[#333333] border-l-2 border-transparent hover:border-[#E57161]
+                    ${isActive
+                      ? 'text-[#E57161] border-l-2 border-[#E57161]'
+                      : 'text-[#777777] hover:text-[#333333] border-l-2 border-transparent hover:border-[#E8E3D9]'}
                   `}
                 >
-                  <Icon className='mr-3 h-4 w-4 flex-shrink-0' />
+                  <Icon className='mr-3 h-4 w-4' />
                   <span>{item.name}</span>
                   {item.gated && (
-                    <Lock size={12} className='ml-2 text-[#A0A0A0] flex-shrink-0' />
+                    <Lock size={12} className='ml-2 text-[#A0A0A0]' />
                   )}
                 </Link>
               );

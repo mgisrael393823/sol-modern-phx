@@ -27,7 +27,7 @@ export default function Layout({ children }: LayoutProps) {
               <p className="text-sm text-[#777777]">
                 © 2025 SOL Modern Blueprint. All content is proprietary information.
               </p>
-              <div className="h-8 w-8 rounded-full bg-[#E57161] opacity-30"></div>
+              <div className="h-8 w-8 rounded-full bg-[#E57161] opacity-10"></div>
             </div>
           </div>
         </footer>
