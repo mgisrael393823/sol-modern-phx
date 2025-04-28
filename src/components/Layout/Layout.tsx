@@ -1,7 +1,6 @@
 
 import React from "react";
-import Header from "./Header";
-import Navigation from "./Navigation";
+import { Navigation } from "./Navigation";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -9,10 +8,9 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="min-h-screen bg-white flex flex-col">
-      <Header />
+    <div className="min-h-screen bg-white flex">
       <Navigation />
-      <main className="flex-1 py-8">
+      <main className="flex-1 pl-64 py-8">
         <div className="container mx-auto px-4 md:px-6">
           {children}
         </div>
