@@ -9,6 +9,8 @@ const nextConfig = {
       },
     ],
   },
+  basePath: '/solmodern',
+  assetPrefix: '/solmodern',
 };
 
 export default nextConfig;
