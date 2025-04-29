@@ -9,8 +9,8 @@ const nextConfig = {
       },
     ],
   },
-  basePath: '/solmodern',
-  assetPrefix: '/solmodern',
+  // Keep it simple for direct deployment
+  output: 'standalone'
 };
 
 export default nextConfig;
