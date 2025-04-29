@@ -23,8 +23,23 @@ body {
 
 @layer base {
   :root {
+    /* Base colors */
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
+    
+    /* Brand colors */
+    --brand-primary: 12 76% 61%; /* #E57161 */
+    --brand-primary-hover: 12 76% 54%; /* #D05A4B */
+    --brand-primary-light: 12 76% 96%; /* #F8F0EA */
+    --brand-bg-light: 36 33% 97%; /* #FCFAF5 */
+    --brand-border: 36 20% 88%; /* #E8E3D9 */
+    
+    /* Text colors */
+    --text-primary: 0 0% 20%; /* #333333 */
+    --text-secondary: 0 0% 47%; /* #777777 */
+    --text-muted: 0 0% 63%; /* #A0A0A0 */
+    
+    /* UI colors */
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
@@ -42,12 +57,18 @@ body {
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
     --ring: 240 10% 3.9%;
+    
+    /* Chart colors */
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
+    
+    /* Border radius */
+    --radius: 0.25rem; /* 4px for rounded-sm */
+    
+    /* Sidebar */
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -56,7 +77,22 @@ body {
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Spacing (in rems) */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+    --space-24: 6rem;
   }
+  
   .dark {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
@@ -100,63 +136,146 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+  
+  /* Font sizes are now smaller and more consistent */
+  h1, .h1 {
+    @apply text-3xl md:text-4xl font-semibold text-[#333333] tracking-wide leading-tight;
+  }
+  
+  h2, .h2 {
+    @apply text-2xl md:text-3xl font-semibold text-[#333333] tracking-wide leading-tight;
+  }
+  
+  h3, .h3 {
+    @apply text-xl md:text-2xl font-semibold text-[#333333] leading-tight;
+  }
+  
+  h4, .h4 {
+    @apply text-base md:text-lg font-semibold text-[#333333] uppercase tracking-wide leading-tight;
+  }
+  
+  p {
+    @apply text-[#777777] text-sm md:text-base leading-relaxed;
+  }
 }
 
 @layer components {
+  /* Container and layout */
   .container {
-    @apply mx-auto px-4 md:px-6 lg:px-8 max-w-7xl w-full;
+    @apply mx-auto px-4 md:px-6 lg:px-8 max-w-6xl w-full;
   }
   
-  /* Consistent typography classes */
+  .section {
+    @apply py-8 md:py-12 mb-12 md:mb-16;
+  }
+  
+  .section-divider {
+    @apply border-t-2 border-[#E8E3D9] pt-6 mb-6;
+  }
+  
+  /* Typography classes */
   .heading-1 {
-    @apply text-4xl md:text-5xl tracking-wide font-semibold text-[#333333];
+    @apply text-3xl md:text-4xl font-semibold text-[#333333] tracking-wide leading-tight;
   }
   
   .heading-2 {
-    @apply text-3xl tracking-wide font-semibold text-[#333333];
+    @apply text-2xl md:text-3xl font-semibold text-[#333333] tracking-wide leading-tight;
   }
   
   .heading-3 {
-    @apply text-2xl font-semibold text-[#333333];
+    @apply text-xl md:text-2xl font-semibold text-[#333333] leading-tight;
   }
   
   .heading-4 {
-    @apply text-lg uppercase tracking-wide font-semibold text-[#333333];
+    @apply text-base md:text-lg font-semibold text-[#333333] uppercase tracking-wide leading-tight;
   }
   
   .section-title {
-    @apply text-sm uppercase tracking-widest font-medium text-[#E57161] mb-1;
+    @apply text-xs uppercase tracking-widest font-medium text-[#E57161] mb-1;
   }
   
-  /* Consistent spacing */
-  .section-spacing {
-    @apply py-12;
+  .body-text {
+    @apply text-sm text-[#777777] leading-relaxed;
   }
   
+  .body-text-lg {
+    @apply text-base text-[#777777] leading-relaxed;
+  }
+  
+  .caption {
+    @apply text-xs text-[#A0A0A0];
+  }
+  
+  /* Component styles */
   .content-box {
-    @apply border border-[#E8E3D9] rounded-sm bg-white p-6;
+    @apply border border-[#E8E3D9] rounded-sm bg-white p-5 md:p-6;
   }
   
-  .content-box-highlight {
-    @apply border border-[#E8E3D9] rounded-sm bg-[#FCFAF5] p-6 relative overflow-hidden;
+  .content-box-light {
+    @apply border border-[#E8E3D9] rounded-sm bg-[#FCFAF5] p-5 md:p-6 relative overflow-hidden;
   }
   
-  /* Consistent decorative elements */
+  .highlight-box {
+    @apply bg-[#FCFAF5] border-l-4 border-[#333333] p-5 md:p-6 mb-6 rounded-sm;
+  }
+  
+  .premium-content-box {
+    @apply p-6 md:p-8 bg-white border border-[#E8E3D9] rounded-sm relative overflow-hidden mb-8;
+  }
+  
+  .premium-badge {
+    @apply bg-[#F8F0EA] px-3 py-1 rounded-sm text-xs text-[#E57161] font-medium uppercase tracking-wider;
+  }
+  
+  .stat-box {
+    @apply bg-[#FCFAF5] border border-[#E8E3D9] rounded-sm p-4 md:p-5;
+  }
+  
+  .stat-label {
+    @apply text-xs uppercase tracking-wide text-[#777777] mb-1;
+  }
+  
+  .stat-value {
+    @apply text-2xl md:text-3xl font-bold text-[#333333];
+  }
+  
+  .stat-description {
+    @apply text-xs text-[#777777];
+  }
+  
+  /* Decorative elements */
   .decorative-circle {
-    @apply absolute -right-8 -bottom-8 w-32 h-32 rounded-full bg-[#E57161] opacity-5;
+    @apply absolute -right-8 -bottom-8 w-24 h-24 md:w-32 md:h-32 rounded-full bg-[#E57161] opacity-5;
   }
   
-  /* Consistent buttons */
+  /* Buttons */
   .btn-primary {
-    @apply bg-[#E57161] hover:bg-[#D05A4B] text-white font-medium px-6 py-3 rounded-sm tracking-wider uppercase text-sm transition-colors;
+    @apply bg-[#E57161] hover:bg-[#D05A4B] text-white font-medium px-4 py-2 md:px-6 md:py-3 rounded-sm tracking-wider uppercase text-xs transition-colors;
   }
   
   .btn-outline {
-    @apply border border-[#E57161] text-[#E57161] hover:bg-[#E57161] hover:bg-opacity-5 font-medium px-5 py-2.5 rounded-sm tracking-wide uppercase text-sm transition-colors;
+    @apply border border-[#E57161] text-[#E57161] hover:bg-[#E57161] hover:bg-opacity-5 font-medium px-4 py-2 md:px-5 md:py-2.5 rounded-sm tracking-wide uppercase text-xs transition-colors;
+  }
+  
+  .btn-link {
+    @apply text-[#E57161] hover:underline font-medium text-xs uppercase tracking-wider flex items-center;
+  }
+  
+  /* List styles */
+  .bullet-list {
+    @apply space-y-2;
+  }
+  
+  .bullet-list-item {
+    @apply flex items-start;
+  }
+  
+  .bullet-marker {
+    @apply text-[#E57161] mr-2 flex-shrink-0;
   }
   
   /* Consistent gated content blur */
   .content-blur {
-    @apply blur-[3px] opacity-50;
+    @apply blur-[3px] opacity-40;
   }
 }

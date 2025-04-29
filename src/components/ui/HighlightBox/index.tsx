@@ -1,22 +1,26 @@
+"use client"
+
 import React from "react";
 
 interface HighlightBoxProps {
   children: React.ReactNode;
-  variant?: "primary" | "secondary" | "stat";
+  variant?: "primary" | "secondary" | "accent";
+  className?: string;
 }
 
 export function HighlightBox({ 
   children, 
-  variant = "primary" 
+  variant = "primary",
+  className = ""
 }: HighlightBoxProps) {
   const variantStyles = {
-    primary: "bg-gray-50 border-l-4 border-[#151617]",
-    secondary: "bg-white border border-gray-200 shadow-sm",
-    stat: "bg-[#151617] text-white"
+    primary: "bg-[#FCFAF5] border-l-4 border-[#333333]",
+    secondary: "bg-white border border-[#E8E3D9]",
+    accent: "bg-[#F8F0EA] border-l-4 border-[#E57161]"
   }[variant];
   
   return (
-    <div className={`${variantStyles} p-6 mb-8 rounded-sm`}>
+    <div className={`highlight-box ${variantStyles} ${className}`}>
       {children}
     </div>
   );

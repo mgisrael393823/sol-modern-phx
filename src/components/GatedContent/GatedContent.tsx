@@ -32,7 +32,7 @@ export function GatedContent({ children, title, teaser }: GatedContentProps) {
       
       {/* Blurred content */}
       <div 
-        className="content-blur pointer-events-none" 
+        className="blur-[6px] opacity-30 pointer-events-none" 
         aria-hidden="true"
       >
         {children}

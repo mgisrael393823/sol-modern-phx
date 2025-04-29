@@ -53,14 +53,14 @@ export default function CompetitiveLandscape() {
                         <p className={`${bodyFont.className} text-sm text-[#777777]`}>275 units, built 2021, 1.2 miles</p>
                       </div>
                     </li>
-                    <li className="flex items-start blur-[4px] opacity-40">
+                    <li className="flex items-start">
                       <span className="text-[#E57161] mr-2">•</span>
                       <div>
                         <span className={`${bodyFont.className} font-medium text-[#333333]`}>The Parker</span>
                         <p className={`${bodyFont.className} text-sm text-[#777777]`}>410 units, built 2019, 0.5 miles</p>
                       </div>
                     </li>
-                    <li className="flex items-start blur-[4px] opacity-40">
+                    <li className="flex items-start">
                       <span className="text-[#E57161] mr-2">•</span>
                       <div>
                         <span className={`${bodyFont.className} font-medium text-[#333333]`}>Axis Residences</span>
@@ -91,7 +91,7 @@ export default function CompetitiveLandscape() {
                         <p className={`${bodyFont.className} text-sm text-[#777777]`}>210 units, built 2016, 1.5 miles</p>
                       </div>
                     </li>
-                    <li className="flex items-start blur-[4px] opacity-40">
+                    <li className="flex items-start">
                       <span className="text-[#E57161] mr-2">•</span>
                       <div>
                         <span className={`${bodyFont.className} font-medium text-[#333333]`}>The Monroe</span>

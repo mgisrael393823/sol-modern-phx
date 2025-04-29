@@ -1,8 +1,17 @@
-
 import React from "react";
 import Head from "next/head";
 import Layout from "@/components/Layout/Layout";
-import { BarChart, LineChart } from "lucide-react";
+import { BarChart, LineChart, PieChart, TrendingUp } from "lucide-react";
+import { Heading } from "@/components/ui/Heading";
+import { HighlightBox } from "@/components/ui/HighlightBox";
+import { StatBox } from "@/components/ui/StatBox";
+import { IncomeDistributionChart } from "@/components/ui/IncomeDistributionChart";
+import { RentGrowthChart } from "@/components/ui/RentGrowthChart";
+import { Montserrat } from "next/font/google";
+import { GatedChart } from "@/components/ui/GatedChart";
+
+const headingFont = Montserrat({ subsets: ["latin"], weight: ["600"] });
+const bodyFont = Montserrat({ subsets: ["latin"], weight: ["400"] });
 
 export default function MarketIntelligence() {
   return (
@@ -14,189 +23,228 @@ export default function MarketIntelligence() {
       
       <Layout>
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl font-bold mb-6">Market Intelligence</h1>
+          <Heading level={1}>Market Intelligence</Heading>
+          
+          <HighlightBox>
+            <p className="body-text-lg">
+              The Downtown Phoenix submarket continues to demonstrate resilience and growth potential despite broader economic headwinds. Key indicators point to sustained demand for premium multifamily housing, with particular strength in urban core locations.
+            </p>
+          </HighlightBox>
           
           <div className="space-y-10">
-            <section>
-              <h2 className="text-2xl font-semibold mb-4">Market Overview</h2>
-              <p className="text-gray-700 mb-6">
-                The Midtown submarket continues to demonstrate resilience and growth potential despite broader economic headwinds. Key indicators point to sustained demand for premium multifamily housing, with particular strength in the urban core locations that offer walkability and proximity to employment centers.
-              </p>
+            <section className="section">
+              <Heading level={2} className="mb-5">Market Overview</Heading>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                <div className="bg-gray-50 p-5 rounded-lg">
-                  <p className="text-sm text-gray-500 uppercase">Submarket Occupancy</p>
-                  <p className="text-3xl font-bold">94.2%</p>
-                  <p className="text-sm text-gray-500">+1.2% Year-over-Year</p>
-                </div>
+              <div className="flex mb-8 shadow-sm">
+                <StatBox
+                  label="Submarket Occupancy"
+                  value="94.2%"
+                  description="+1.2% Year-over-Year"
+                />
                 
-                <div className="bg-gray-50 p-5 rounded-lg">
-                  <p className="text-sm text-gray-500 uppercase">Avg. Effective Rent</p>
-                  <p className="text-3xl font-bold">$2.68/SF</p>
-                  <p className="text-sm text-gray-500">+3.8% Year-over-Year</p>
-                </div>
+                <StatBox
+                  label="Avg. Effective Rent"
+                  value="$2.68/SF"
+                  description="+3.8% Year-over-Year"
+                />
                 
-                <div className="bg-gray-50 p-5 rounded-lg">
-                  <p className="text-sm text-gray-500 uppercase">Absorption Rate</p>
-                  <p className="text-3xl font-bold">22 Units/Mo</p>
-                  <p className="text-sm text-gray-500">For New Deliveries</p>
-                </div>
+                <StatBox
+                  label="Absorption Rate"
+                  value="22 Units/Mo"
+                  description="For New Deliveries"
+                />
               </div>
               
-              <div className="border border-gray-200 rounded-lg p-6 flex items-center justify-center h-64 mb-4">
-                <div className="text-center">
-                  <LineChart size={48} className="mx-auto mb-2 text-gray-400" />
-                  <p className="text-gray-500">Rent Growth Trends Chart</p>
+              <div className="content-box-light mb-6">
+                <Heading level={3} className="mb-3">Key Market Insights</Heading>
+                <p className="body-text mb-4">
+                  The Downtown Phoenix rental market shows strong fundamentals with continued rent growth despite broader economic pressures. Recent deliveries have achieved stabilization within projected timeframes, indicating healthy absorption capacity.
+                </p>
+                <ul className="bullet-list">
+                  <li className="bullet-list-item">
+                    <span className="bullet-marker">•</span>
+                    <span className="body-text">Class A properties maintain 93-95% occupancy despite recent deliveries</span>
+                  </li>
+                  <li className="bullet-list-item">
+                    <span className="bullet-marker">•</span>
+                    <span className="body-text">Rent growth continues to outpace metro average by 1.2%</span>
+                  </li>
+                  <li className="bullet-list-item">
+                    <span className="bullet-marker">•</span>
+                    <span className="body-text">Downtown/Roosevelt Row premium averages 12-18% over nearby submarkets</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="content-box mb-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <LineChart className="text-[#777777]" size={24} />
+                  <Heading level={3} className="mb-0">Rent Growth Trends</Heading>
                 </div>
+                <GatedChart 
+                  title="Rent Growth Trends" 
+                  description="Access detailed quarterly rent growth data for Downtown Phoenix and comparative markets"
+                >
+                  <RentGrowthChart height="h-64" />
+                </GatedChart>
               </div>
             </section>
             
-            <section>
-              <h2 className="text-2xl font-semibold mb-4">Demographic Analysis</h2>
+            <section className="section-divider section">
+              <Heading level={2} className="mb-5">Demographic Analysis</Heading>
               
-              <div className="mb-6">
-                <h3 className="font-medium text-lg mb-3">Target Renter Profile</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="border border-gray-200 rounded-lg p-5">
-                    <h4 className="font-medium mb-2">Primary Demographic</h4>
-                    <ul className="space-y-2 text-gray-700">
-                      <li className="flex items-start">
-                        <span className="text-gray-400 mr-2">•</span>
-                        <span>Young professionals (28-42)</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-gray-400 mr-2">•</span>
-                        <span>Income range: $85,000-$150,000</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-gray-400 mr-2">•</span>
-                        <span>Tech, healthcare, and finance sectors</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-gray-400 mr-2">•</span>
-                        <span>Value walkability and urban amenities</span>
-                      </li>
-                    </ul>
-                  </div>
-                  
-                  <div className="border border-gray-200 rounded-lg p-5">
-                    <h4 className="font-medium mb-2">Secondary Demographic</h4>
-                    <ul className="space-y-2 text-gray-700">
-                      <li className="flex items-start">
-                        <span className="text-gray-400 mr-2">•</span>
-                        <span>Empty nesters (52-65)</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-gray-400 mr-2">•</span>
-                        <span>Income range: $120,000+</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-gray-400 mr-2">•</span>
-                        <span>Downsizing from suburban homes</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-gray-400 mr-2">•</span>
-                        <span>Prioritize security and premium finishes</span>
-                      </li>
-                    </ul>
-                  </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div className="content-box-light">
+                  <Heading level={3} className="mb-3">Primary Demographic</Heading>
+                  <ul className="bullet-list">
+                    <li className="bullet-list-item">
+                      <span className="bullet-marker">•</span>
+                      <span className="body-text">Young professionals (28-42)</span>
+                    </li>
+                    <li className="bullet-list-item">
+                      <span className="bullet-marker">•</span>
+                      <span className="body-text">Income range: $85,000-$150,000</span>
+                    </li>
+                    <li className="bullet-list-item">
+                      <span className="bullet-marker">•</span>
+                      <span className="body-text">Tech, healthcare, and finance sectors</span>
+                    </li>
+                    <li className="bullet-list-item">
+                      <span className="bullet-marker">•</span>
+                      <span className="body-text">Value walkability and urban amenities</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="content-box-light">
+                  <Heading level={3} className="mb-3">Secondary Demographic</Heading>
+                  <ul className="bullet-list">
+                    <li className="bullet-list-item">
+                      <span className="bullet-marker">•</span>
+                      <span className="body-text">Empty nesters (52-65)</span>
+                    </li>
+                    <li className="bullet-list-item">
+                      <span className="bullet-marker">•</span>
+                      <span className="body-text">Income range: $120,000+</span>
+                    </li>
+                    <li className="bullet-list-item">
+                      <span className="bullet-marker">•</span>
+                      <span className="body-text">Downsizing from suburban homes</span>
+                    </li>
+                    <li className="bullet-list-item">
+                      <span className="bullet-marker">•</span>
+                      <span className="body-text">Prioritize security and premium finishes</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
               
-              <div className="border border-gray-200 rounded-lg p-6 flex items-center justify-center h-64 mb-4">
-                <div className="text-center">
-                  <BarChart size={48} className="mx-auto mb-2 text-gray-400" />
-                  <p className="text-gray-500">Income Distribution Chart</p>
+              <div className="content-box mb-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <BarChart className="text-[#777777]" size={24} />
+                  <Heading level={3} className="mb-0">Income Distribution</Heading>
                 </div>
+                <GatedChart 
+                  title="Income Distribution Analysis" 
+                  description="Access comprehensive income distribution data for target renter segments"
+                >
+                  <IncomeDistributionChart height="h-64" />
+                </GatedChart>
               </div>
             </section>
             
-            <section>
-              <h2 className="text-2xl font-semibold mb-4">Supply Analysis</h2>
+            <section className="section-divider section">
+              <Heading level={2} className="mb-5">Supply Analysis</Heading>
               
-              <div className="bg-gray-50 border-l-4 border-gray-300 p-5 mb-6">
-                <h3 className="font-medium text-lg mb-2">Pipeline Overview</h3>
-                <p className="text-gray-700">
+              <HighlightBox variant="secondary" className="mb-6">
+                <Heading level={3} className="mb-2">Pipeline Overview</Heading>
+                <p className="body-text">
                   The submarket has 1,850 units under construction with expected delivery over the next 24 months. SOL Modern's delivery timing positions it advantageously between major competitive deliveries.
                 </p>
-              </div>
+              </HighlightBox>
               
-              <div className="overflow-x-auto mb-6">
-                <table className="min-w-full border-collapse">
+              <div className="mb-8 overflow-x-auto">
+                <table className="w-full border-collapse">
                   <thead>
-                    <tr className="bg-gray-50">
-                      <th className="border border-gray-200 px-4 py-3 text-left">Project</th>
-                      <th className="border border-gray-200 px-4 py-3 text-left">Units</th>
-                      <th className="border border-gray-200 px-4 py-3 text-left">Delivery</th>
-                      <th className="border border-gray-200 px-4 py-3 text-left">Distance</th>
+                    <tr className="bg-[#FCFAF5]">
+                      <th className="border border-[#E8E3D9] px-4 py-3 text-left text-sm font-medium text-[#333333]">Project</th>
+                      <th className="border border-[#E8E3D9] px-4 py-3 text-left text-sm font-medium text-[#333333]">Units</th>
+                      <th className="border border-[#E8E3D9] px-4 py-3 text-left text-sm font-medium text-[#333333]">Delivery</th>
+                      <th className="border border-[#E8E3D9] px-4 py-3 text-left text-sm font-medium text-[#333333]">Distance</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody className="text-sm">
                     <tr>
-                      <td className="border border-gray-200 px-4 py-3">The Emerson</td>
-                      <td className="border border-gray-200 px-4 py-3">320</td>
-                      <td className="border border-gray-200 px-4 py-3">Q2 2023</td>
-                      <td className="border border-gray-200 px-4 py-3">0.8 miles</td>
+                      <td className="border border-[#E8E3D9] px-4 py-3 font-medium">The Emerson</td>
+                      <td className="border border-[#E8E3D9] px-4 py-3">320</td>
+                      <td className="border border-[#E8E3D9] px-4 py-3">Q2 2023</td>
+                      <td className="border border-[#E8E3D9] px-4 py-3">0.8 miles</td>
                     </tr>
-                    <tr className="bg-gray-50">
-                      <td className="border border-gray-200 px-4 py-3">Midtown Heights</td>
-                      <td className="border border-gray-200 px-4 py-3">275</td>
-                      <td className="border border-gray-200 px-4 py-3">Q4 2023</td>
-                      <td className="border border-gray-200 px-4 py-3">1.2 miles</td>
+                    <tr className="bg-[#FCFAF5]">
+                      <td className="border border-[#E8E3D9] px-4 py-3 font-medium">Midtown Heights</td>
+                      <td className="border border-[#E8E3D9] px-4 py-3">275</td>
+                      <td className="border border-[#E8E3D9] px-4 py-3">Q4 2023</td>
+                      <td className="border border-[#E8E3D9] px-4 py-3">1.2 miles</td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-200 px-4 py-3">The Parker</td>
-                      <td className="border border-gray-200 px-4 py-3">410</td>
-                      <td className="border border-gray-200 px-4 py-3">Q1 2024</td>
-                      <td className="border border-gray-200 px-4 py-3">0.5 miles</td>
+                      <td className="border border-[#E8E3D9] px-4 py-3 font-medium">The Parker</td>
+                      <td className="border border-[#E8E3D9] px-4 py-3">410</td>
+                      <td className="border border-[#E8E3D9] px-4 py-3">Q1 2024</td>
+                      <td className="border border-[#E8E3D9] px-4 py-3">0.5 miles</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
             </section>
             
-            <section>
-              <h2 className="text-2xl font-semibold mb-4">Demand Drivers</h2>
+            <section className="section-divider section">
+              <Heading level={2} className="mb-5">Demand Drivers</Heading>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <h3 className="font-medium text-lg mb-3">Employment Growth</h3>
-                  <p className="text-gray-700 mb-3">
+                <div className="content-box-light">
+                  <div className="flex items-center gap-3 mb-3">
+                    <TrendingUp className="text-[#777777]" size={20} />
+                    <Heading level={3} className="mb-0">Employment Growth</Heading>
+                  </div>
+                  <p className="body-text mb-3">
                     The submarket benefits from proximity to major employment centers with projected job growth of 3.2% annually over the next three years.
                   </p>
-                  <ul className="space-y-2 text-gray-700">
-                    <li className="flex items-start">
-                      <span className="text-gray-400 mr-2">•</span>
-                      <span>Tech sector expansion adding 5,200+ jobs</span>
+                  <ul className="bullet-list">
+                    <li className="bullet-list-item">
+                      <span className="bullet-marker">•</span>
+                      <span className="body-text">Tech sector expansion adding 5,200+ jobs</span>
                     </li>
-                    <li className="flex items-start">
-                      <span className="text-gray-400 mr-2">•</span>
-                      <span>Healthcare campus expansion (0.4 miles)</span>
+                    <li className="bullet-list-item">
+                      <span className="bullet-marker">•</span>
+                      <span className="body-text">Healthcare campus expansion (0.4 miles)</span>
                     </li>
-                    <li className="flex items-start">
-                      <span className="text-gray-400 mr-2">•</span>
-                      <span>Financial services hub relocation</span>
+                    <li className="bullet-list-item">
+                      <span className="bullet-marker">•</span>
+                      <span className="body-text">Financial services hub relocation</span>
                     </li>
                   </ul>
                 </div>
                 
-                <div>
-                  <h3 className="font-medium text-lg mb-3">Lifestyle Amenities</h3>
-                  <p className="text-gray-700 mb-3">
+                <div className="content-box-light">
+                  <div className="flex items-center gap-3 mb-3">
+                    <PieChart className="text-[#777777]" size={20} />
+                    <Heading level={3} className="mb-0">Lifestyle Amenities</Heading>
+                  </div>
+                  <p className="body-text mb-3">
                     The neighborhood has experienced significant retail and dining growth, enhancing its appeal to target demographics.
                   </p>
-                  <ul className="space-y-2 text-gray-700">
-                    <li className="flex items-start">
-                      <span className="text-gray-400 mr-2">•</span>
-                      <span>12 new restaurants within 0.5 miles</span>
+                  <ul className="bullet-list">
+                    <li className="bullet-list-item">
+                      <span className="bullet-marker">•</span>
+                      <span className="body-text">12 new restaurants within 0.5 miles</span>
                     </li>
-                    <li className="flex items-start">
-                      <span className="text-gray-400 mr-2">•</span>
-                      <span>Expanded public transit options</span>
+                    <li className="bullet-list-item">
+                      <span className="bullet-marker">•</span>
+                      <span className="body-text">Expanded public transit options</span>
                     </li>
-                    <li className="flex items-start">
-                      <span className="text-gray-400 mr-2">•</span>
-                      <span>New urban park and cultural center</span>
+                    <li className="bullet-list-item">
+                      <span className="bullet-marker">•</span>
+                      <span className="body-text">New urban park and cultural center</span>
                     </li>
                   </ul>
                 </div>
