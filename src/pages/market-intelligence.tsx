@@ -22,7 +22,7 @@ export default function MarketIntelligence() {
       </Head>
       
       <Layout>
-        <div className="max-w-4xl mx-auto">
+        <div className="w-full max-w-4xl mx-auto">
           <Heading level={1}>Market Intelligence</Heading>
           
           <HighlightBox>
@@ -35,7 +35,7 @@ export default function MarketIntelligence() {
             <section className="section">
               <Heading level={2} className="mb-5">Market Overview</Heading>
               
-              <div className="flex mb-8 shadow-sm">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
                 <StatBox
                   label="Submarket Occupancy"
                   value="94.2%"
@@ -77,7 +77,7 @@ export default function MarketIntelligence() {
               </div>
               
               <div className="content-box mb-8">
-                <div className="flex items-center gap-3 mb-4">
+                <div className="flex flex-wrap items-center gap-2 md:gap-3 mb-4">
                   <LineChart className="text-[#777777]" size={24} />
                   <Heading level={3} className="mb-0">Rent Growth Trends</Heading>
                 </div>
@@ -85,7 +85,7 @@ export default function MarketIntelligence() {
                   title="Rent Growth Trends" 
                   description="Access detailed quarterly rent growth data for Downtown Phoenix and comparative markets"
                 >
-                  <RentGrowthChart height="h-64" />
+                  <RentGrowthChart height="h-56 md:h-64" />
                 </GatedChart>
               </div>
             </section>
@@ -140,7 +140,7 @@ export default function MarketIntelligence() {
               </div>
               
               <div className="content-box mb-8">
-                <div className="flex items-center gap-3 mb-4">
+                <div className="flex flex-wrap items-center gap-2 md:gap-3 mb-4">
                   <BarChart className="text-[#777777]" size={24} />
                   <Heading level={3} className="mb-0">Income Distribution</Heading>
                 </div>
@@ -148,7 +148,7 @@ export default function MarketIntelligence() {
                   title="Income Distribution Analysis" 
                   description="Access comprehensive income distribution data for target renter segments"
                 >
-                  <IncomeDistributionChart height="h-64" />
+                  <IncomeDistributionChart height="h-56 md:h-64" />
                 </GatedChart>
               </div>
             </section>
@@ -163,7 +163,7 @@ export default function MarketIntelligence() {
                 </p>
               </HighlightBox>
               
-              <div className="mb-8 overflow-x-auto">
+              <div className="mb-8 overflow-x-auto w-full -mx-4 px-4 md:mx-0 md:px-0">
                 <table className="w-full border-collapse">
                   <thead>
                     <tr className="bg-[#FCFAF5]">
@@ -202,7 +202,7 @@ export default function MarketIntelligence() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div className="content-box-light">
-                  <div className="flex items-center gap-3 mb-3">
+                  <div className="flex flex-wrap items-center gap-2 md:gap-3 mb-3">
                     <TrendingUp className="text-[#777777]" size={20} />
                     <Heading level={3} className="mb-0">Employment Growth</Heading>
                   </div>
@@ -226,7 +226,7 @@ export default function MarketIntelligence() {
                 </div>
                 
                 <div className="content-box-light">
-                  <div className="flex items-center gap-3 mb-3">
+                  <div className="flex flex-wrap items-center gap-2 md:gap-3 mb-3">
                     <PieChart className="text-[#777777]" size={20} />
                     <Heading level={3} className="mb-0">Lifestyle Amenities</Heading>
                   </div>

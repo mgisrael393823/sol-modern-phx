@@ -82,7 +82,7 @@ export default function ExecutiveSummary() {
       </Head>
       
       <Layout>
-        <div className="max-w-4xl mx-auto">
+        <div className="w-full max-w-4xl mx-auto">
           {/* Page Header */}
           <div className="mb-16">
             <h4 className={`${headingFont.className} text-sm uppercase tracking-widest text-[#E57161] font-medium mb-1`}>STRATEGIC BLUEPRINT</h4>
@@ -111,7 +111,7 @@ export default function ExecutiveSummary() {
             
             <Heading level={2} className="mb-8">Project Overview</Heading>
             
-            <div className="grid grid-cols-1 md:grid-cols-6 gap-6 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-6 gap-3 md:gap-6 mb-8">
               {/* Financial metrics - top row */}
               <div className="bg-[#FCFAF5] border border-[#E8E3D9] rounded-sm p-5 md:col-span-2">
                 <p className="text-sm uppercase tracking-wide text-[#777777] mb-1">Projected Lease-Up</p>
@@ -239,7 +239,7 @@ export default function ExecutiveSummary() {
             <Heading level={2} className="mb-6">Market Position Analysis</Heading>
             <p className={`${bodyFont.className} mb-8 text-[#777777]`}>The following SWOT analysis identifies SOL Modern's position within the competitive landscape of Roosevelt Row:</p>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-8">
               <CollapsibleCard 
                 title="Strengths" 
                 items={[
@@ -330,7 +330,7 @@ export default function ExecutiveSummary() {
             <p className={`${bodyFont.className} mb-8 text-[#777777]`}>Based on our market position analysis, we recommend the following strategic approach categories:</p>
             
             {/* Core Strategy Section - High-level categories only */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 mb-12">
               <div className="bg-[#FCFAF5] border border-[#E8E3D9] rounded-sm p-6 hover:border-[#E57161] transition-colors text-center">
                 <div className="w-12 h-12 rounded-full bg-[#F8F0EA] flex items-center justify-center mx-auto mb-4">
                   <span className="text-[#E57161] text-xl font-bold">1</span>

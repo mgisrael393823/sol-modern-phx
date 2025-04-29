@@ -27,7 +27,7 @@ const navItems = [
 
 export function StaticNavigation() {
   return (
-    <nav className='w-64 bg-[#FCFAF5] border-r border-[#E8E3D9] h-screen fixed left-0 top-0 overflow-y-auto'>
+    <nav className='hidden md:block w-64 bg-[#FCFAF5] border-r border-[#E8E3D9] h-screen fixed left-0 top-0 overflow-y-auto'>
       <div className='h-full flex flex-col'>
         <div className='px-6 py-10 border-b border-[#E8E3D9]'>
           <Link href="/" className="block">
