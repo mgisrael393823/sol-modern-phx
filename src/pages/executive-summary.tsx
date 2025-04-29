@@ -68,8 +68,7 @@ export default function ExecutiveSummary() {
         {/* Open Graph meta tags */}
         <meta property="og:title" content="SOL MODERN | THE BLUEPRINT - Executive Summary" />
         <meta property="og:description" content="Executive Summary of the SOL Modern Lease-Up Strategy" />
-        <meta property="og:image" content="https://solmodernphx.com/og-image.png?v=3&t=0429" />
-        <meta property="og:image:secure_url" content="https://solmodernphx.com/og-image.png?v=3&t=0429" />
+        <meta property="og:image" content="/og-image.png?v=3&t=0429" />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -79,7 +78,7 @@ export default function ExecutiveSummary() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="SOL MODERN | THE BLUEPRINT - Executive Summary" />
         <meta name="twitter:description" content="Executive Summary of the SOL Modern Lease-Up Strategy" />
-        <meta name="twitter:image" content="https://solmodernphx.com/og-image.png?v=3&t=0429" />
+        <meta name="twitter:image" content="/og-image.png?v=3&t=0429" />
       </Head>
       
       <Layout>

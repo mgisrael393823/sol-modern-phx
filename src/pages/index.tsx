@@ -16,15 +16,14 @@ export default function Home() {
         {/* Open Graph meta tags specifically for home page (will override defaults in _document.tsx) */}
         <meta property="og:title" content="SOL MODERN | THE BLUEPRINT" />
         <meta property="og:description" content="LEASE-UP STRATEGY BLUEPRINT" />
-        <meta property="og:image" content="https://solmodernphx.com/og-image.png?v=3&t=0429" />
-        <meta property="og:image:secure_url" content="https://solmodernphx.com/og-image.png?v=3&t=0429" />
+        <meta property="og:image" content="/og-image.png?v=3&t=0429" />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="SOL Modern with 'THE BLUEPRINT' spray painted in blue over an orange circular pattern on dark background" />
         
         {/* Twitter Card tags */}
-        <meta name="twitter:image" content="https://solmodernphx.com/og-image.png?v=3&t=0429" />
+        <meta name="twitter:image" content="/og-image.png?v=3&t=0429" />
       </Head>
       
       <Layout>
