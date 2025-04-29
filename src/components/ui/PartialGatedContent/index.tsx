@@ -93,12 +93,12 @@ export function PartialGatedContent({
       </div>
       
       <div 
-        className="absolute bottom-10 left-0 right-0 flex items-center justify-center cursor-pointer"
-        onClick={() => setIsDialogOpen(true)}
+        className="absolute bottom-10 left-0 right-0 flex items-center justify-center"
       >
         <Button 
           variant="outline"
-          className="border-[#E57161] hover:bg-[#E57161] hover:bg-opacity-5 text-[#E57161] font-medium px-8 py-3 rounded-sm tracking-wider uppercase text-xs flex items-center"
+          disabled
+          className="border-[#E57161] text-[#E57161] font-medium px-8 py-3 rounded-sm tracking-wider uppercase text-xs flex items-center cursor-not-allowed opacity-80"
         >
           <span>Access Full {title}</span>
           <ArrowRight className="h-3.5 w-3.5 ml-2" />

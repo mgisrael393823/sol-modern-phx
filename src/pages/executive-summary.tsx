@@ -62,6 +62,24 @@ export default function ExecutiveSummary() {
       <Head>
         <title>Executive Summary | SOL Modern</title>
         <meta name="description" content="Executive Summary of the SOL Modern Lease-Up Strategy" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="alternate icon" href="/favicon-original.png" />
+        
+        {/* Open Graph meta tags */}
+        <meta property="og:title" content="SOL MODERN | THE BLUEPRINT - Executive Summary" />
+        <meta property="og:description" content="Executive Summary of the SOL Modern Lease-Up Strategy" />
+        <meta property="og:image" content="https://solmodernphx.com/og-image.png?v=3&t=0429" />
+        <meta property="og:image:secure_url" content="https://solmodernphx.com/og-image.png?v=3&t=0429" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="SOL Modern with 'THE BLUEPRINT' spray painted in blue over an orange circular pattern on dark background" />
+        
+        {/* Twitter Card tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="SOL MODERN | THE BLUEPRINT - Executive Summary" />
+        <meta name="twitter:description" content="Executive Summary of the SOL Modern Lease-Up Strategy" />
+        <meta name="twitter:image" content="https://solmodernphx.com/og-image.png?v=3&t=0429" />
       </Head>
       
       <Layout>
@@ -141,8 +159,8 @@ export default function ExecutiveSummary() {
               <div className="p-4 text-center">
                 <Button 
                   variant="outline"
-                  onClick={() => {}}
-                  className="text-[#E57161] border-[#E57161] hover:bg-[#E57161] hover:bg-opacity-5 font-medium px-5 py-2 rounded-sm tracking-wide uppercase text-xs flex items-center mx-auto"
+                  disabled
+                  className="text-[#E57161] border-[#E57161] font-medium px-5 py-2 rounded-sm tracking-wide uppercase text-xs flex items-center mx-auto cursor-not-allowed opacity-80"
                 >
                   <span>Access Full Forecast</span>
                   <ArrowRight className="h-3.5 w-3.5 ml-2" />
@@ -201,8 +219,8 @@ export default function ExecutiveSummary() {
                 <div className="text-right">
                   <Button 
                     variant="outline"
-                    onClick={() => {}}
-                    className="text-[#E57161] border-[#E57161] hover:bg-[#E57161] hover:bg-opacity-5 font-medium px-5 py-2 rounded-sm tracking-wide uppercase text-xs flex items-center ml-auto"
+                    disabled
+                    className="text-[#E57161] border-[#E57161] font-medium px-5 py-2 rounded-sm tracking-wide uppercase text-xs flex items-center ml-auto cursor-not-allowed opacity-80"
                   >
                     <span>Access Full Analysis</span>
                     <ArrowRight className="h-3.5 w-3.5 ml-2" />

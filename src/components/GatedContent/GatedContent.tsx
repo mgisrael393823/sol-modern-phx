@@ -39,12 +39,12 @@ export function GatedContent({ children, title, teaser }: GatedContentProps) {
       </div>
       
       <div 
-        className="absolute inset-0 top-36 flex items-center justify-center cursor-pointer"
-        onClick={() => setIsDialogOpen(true)}
+        className="absolute inset-0 top-36 flex items-center justify-center"
       >
         <Button 
           size="lg"
-          className="btn-primary px-10 py-6"
+          disabled
+          className="btn-primary px-10 py-6 cursor-not-allowed opacity-80"
         >
           UNLOCK {title}
         </Button>

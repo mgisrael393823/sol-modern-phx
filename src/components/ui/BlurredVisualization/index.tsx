@@ -43,8 +43,7 @@ export function BlurredVisualization({
 
   return (
     <div 
-      className={`${height} border border-[#E8E3D9] rounded-sm p-6 relative overflow-hidden cursor-pointer`}
-      onClick={() => setIsDialogOpen(true)}
+      className={`${height} border border-[#E8E3D9] rounded-sm p-6 relative overflow-hidden`}
     >
       {/* Sample chart visualization in background */}
       <div className="absolute inset-0 flex items-center justify-center opacity-20">
@@ -78,13 +77,11 @@ export function BlurredVisualization({
           </p>
         )}
         
-        <Button 
-          variant="outline"
-          onClick={() => setIsDialogOpen(true)}
-          className="text-[#E57161] border-[#E57161] hover:bg-[#E57161] hover:bg-opacity-5 font-medium px-4 py-1.5 rounded-sm tracking-wide uppercase text-xs"
+        <span 
+          className="text-[#E57161] font-medium px-4 py-1.5 uppercase tracking-wide text-xs opacity-80"
         >
           Premium Content
-        </Button>
+        </span>
       </div>
 
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
