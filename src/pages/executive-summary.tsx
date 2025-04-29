@@ -117,6 +117,8 @@ export default function ExecutiveSummary() {
                 <p className="text-sm uppercase tracking-wide text-[#777777] mb-1">Projected Lease-Up</p>
                 <p className="text-3xl font-bold text-[#333333]">12.5 mo</p>
                 <p className="text-sm text-[#777777]">To stabilization</p>
+                <p className="text-[10px] leading-tight text-[#888888] mt-2 max-w-[180px] sm:max-w-[200px]">*12.5 mo. projection based on standard generic approach.</p>
+                <p className="text-[10px] leading-tight text-[#888888] mt-1.5 max-w-[180px] sm:max-w-[200px]">**DISRVPT projects 9–9.5 months with proprietary strategy.</p>
               </div>
               <div className="bg-[#FCFAF5] border border-[#E8E3D9] rounded-sm p-5 md:col-span-2">
                 <p className="text-sm uppercase tracking-wide text-[#777777] mb-1">Competitive Rents</p>
