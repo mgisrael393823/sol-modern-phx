@@ -3,11 +3,9 @@ import Head from "next/head";
 import Layout from "@/components/Layout/Layout";
 import { Heading } from "@/components/ui/Heading";
 import { HighlightBox } from "@/components/ui/HighlightBox";
-import { PartialGatedContent } from "@/components/ui/PartialGatedContent";
-import { BlurredVisualization } from "@/components/ui/BlurredVisualization";
 import { Montserrat } from "next/font/google";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ChevronDown, ChevronRight } from "lucide-react";
+import { ArrowRight, BarChart, TrendingUp, ChevronDown, ChevronRight } from "lucide-react";
 
 const headingFont = Montserrat({ subsets: ["latin"], weight: ["600"] });
 const bodyFont = Montserrat({ subsets: ["latin"], weight: ["400"] });
@@ -149,23 +147,86 @@ export default function ExecutiveSummary() {
               </div>
             </div>
 
-            {/* Blurred visualization */}
-            <div className="bg-white border border-[#E8E3D9] rounded-sm">
-              <BlurredVisualization
-                title="Absorption Forecast"
-                description="Premium analysis of projected lease-up velocity by floor plan type with detailed financial modeling"
-                chartType="line"
-                height="h-[300px]"
-              />
-              <div className="p-4 text-center">
-                <Button 
-                  variant="outline"
-                  disabled
-                  className="text-[#E57161] border-[#E57161] font-medium px-5 py-2 rounded-sm tracking-wide uppercase text-xs flex items-center mx-auto cursor-not-allowed opacity-80"
-                >
-                  <span>Access Full Forecast</span>
-                  <ArrowRight className="h-3.5 w-3.5 ml-2" />
-                </Button>
+            {/* Absorption Forecast Chart */}
+            <div className="bg-white border border-[#E8E3D9] rounded-sm p-6">
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <h3 className={`${headingFont.className} text-lg text-[#333333] mb-1`}>Absorption Forecast</h3>
+                  <p className="text-sm text-[#777777]">Projected lease-up velocity by floor plan type with detailed financial modeling</p>
+                </div>
+                <BarChart className="text-[#E57161] h-6 w-6" />
+              </div>
+              
+              <div className="h-[300px] relative bg-[#FCFAF5] p-4 rounded-sm border border-[#E8E3D9]">
+                {/* Chart Content */}
+                <div className="absolute bottom-4 left-4 right-4">
+                  <div className="flex justify-between mb-2">
+                    <div className="text-xs text-[#555555]">Pre-Leasing</div>
+                    <div className="text-xs text-[#555555]">90 Days</div>
+                    <div className="text-xs text-[#555555]">180 Days</div>
+                    <div className="text-xs text-[#555555]">270 Days</div>
+                  </div>
+                  
+                  {/* Studio Units - Fastest absorption */}
+                  <div className="h-6 w-full bg-[#F8F4EE] rounded-sm mb-2 relative overflow-hidden">
+                    <div className="absolute top-0 left-0 bottom-0 bg-[#E57161] w-[85%] rounded-sm flex items-center">
+                      <span className="text-white text-xs font-medium pl-2">Studio Units - 85% Absorbed</span>
+                    </div>
+                  </div>
+                  
+                  {/* 1BR Units */}
+                  <div className="h-6 w-full bg-[#F8F4EE] rounded-sm mb-2 relative overflow-hidden">
+                    <div className="absolute top-0 left-0 bottom-0 bg-[#E57161] opacity-80 w-[78%] rounded-sm flex items-center">
+                      <span className="text-white text-xs font-medium pl-2">1BR Units - 78% Absorbed</span>
+                    </div>
+                  </div>
+                  
+                  {/* 2BR Units */}
+                  <div className="h-6 w-full bg-[#F8F4EE] rounded-sm mb-2 relative overflow-hidden">
+                    <div className="absolute top-0 left-0 bottom-0 bg-[#E57161] opacity-70 w-[65%] rounded-sm flex items-center">
+                      <span className="text-white text-xs font-medium pl-2">2BR Units - 65% Absorbed</span>
+                    </div>
+                  </div>
+                  
+                  {/* 3BR Units */}
+                  <div className="h-6 w-full bg-[#F8F4EE] rounded-sm mb-2 relative overflow-hidden">
+                    <div className="absolute top-0 left-0 bottom-0 bg-[#E57161] opacity-60 w-[52%] rounded-sm flex items-center">
+                      <span className="text-white text-xs font-medium pl-2">3BR Units - 52% Absorbed</span>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Financial Projections */}
+                <div className="absolute top-4 right-4 bg-white p-3 rounded-sm border border-[#E8E3D9] w-48">
+                  <p className="text-xs font-medium text-[#333333] mb-2">Financial Projections</p>
+                  <div className="flex justify-between text-xs mb-1">
+                    <span className="text-[#777777]">90-Day Revenue:</span>
+                    <span className="text-[#333333] font-medium">$2.4M</span>
+                  </div>
+                  <div className="flex justify-between text-xs mb-1">
+                    <span className="text-[#777777]">180-Day Revenue:</span>
+                    <span className="text-[#333333] font-medium">$5.1M</span>
+                  </div>
+                  <div className="flex justify-between text-xs mb-1">
+                    <span className="text-[#777777]">270-Day Revenue:</span>
+                    <span className="text-[#333333] font-medium">$8.7M</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="mt-4 text-sm text-[#777777]">
+                <p className="flex items-start">
+                  <span className="text-[#E57161] mr-2 font-bold">•</span>
+                  <span>Standard projections show 12.5 month stabilization period with traditional approach</span>
+                </p>
+                <p className="flex items-start mt-1">
+                  <span className="text-[#E57161] mr-2 font-bold">•</span>
+                  <span>Proprietary strategy projects 9–9.5 month stabilization with our recommended approach</span>
+                </p>
+                <p className="flex items-start mt-1">
+                  <span className="text-[#E57161] mr-2 font-bold">•</span>
+                  <span>Studio and 1BR configurations projected to absorb 35% faster than larger unit types</span>
+                </p>
               </div>
             </div>
           </section>
@@ -184,48 +245,66 @@ export default function ExecutiveSummary() {
                 for SOL Modern to achieve stabilization within the projected timeframe despite current market challenges.
               </p>
               
-              {/* Premium content teaser */}
+              {/* Comprehensive Market Opportunity Analysis */}
               <div className="p-8 bg-white border border-[#E8E3D9] rounded-sm relative overflow-hidden mt-8">
                 <div className="absolute -right-8 -bottom-8 w-32 h-32 rounded-full bg-[#E57161] opacity-5"></div>
                 
                 <div className="mb-4">
                   <h3 className={`${headingFont.className} text-lg uppercase tracking-wide text-[#333333] flex items-center`}>
                     <ArrowRight className="h-4 w-4 mr-2 text-[#E57161]" />
-                    OPPORTUNITY ANALYSIS
+                    COMPREHENSIVE OPPORTUNITY ANALYSIS
                   </h3>
                 </div>
                 
                 <p className={`${bodyFont.className} text-[#777777] leading-relaxed max-w-3xl mb-6`}>
-                  Access our detailed market opportunity analysis with projections for Downtown Phoenix absorption rates, competitive positioning matrix, and target demographic profiles.
+                  Our detailed market opportunity analysis examines current market dynamics, projected absorption rates, and target demographic profiles to identify key areas of competitive advantage.
                 </p>
                 
                 <div className="mb-6">
-                  <h5 className={`${headingFont.className} text-sm uppercase tracking-wide mb-3 text-[#555555]`}>Key Insights Preview:</h5>
-                  <ul className="space-y-2">
+                  <h5 className={`${headingFont.className} text-sm uppercase tracking-wide mb-3 text-[#555555]`}>Key Market Insights:</h5>
+                  <ul className="space-y-3">
                     <li className="flex items-start">
                       <span className="text-[#E57161] mr-2">•</span>
-                      <span className={`${bodyFont.className} text-[#777777]`}>Current absorption trends indicate a 12.5 month stabilization period for SOL Modern</span>
+                      <span className={`${bodyFont.className} text-[#777777]`}>Downtown Phoenix is experiencing a supply-demand imbalance with 2,850 units currently in lease-up and an additional 1,400 units expected to deliver in the next 18 months.</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-[#E57161] mr-2">•</span>
-                      <span className={`${bodyFont.className} text-[#777777]`}>Competitive advantage opportunities in luxury amenities and technology integration</span>
+                      <span className={`${bodyFont.className} text-[#777777]`}>Current absorption rates average 35-45 units per month for comparable properties, with significant variation based on price point, unit mix, and amenity offerings.</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-[#E57161] mr-2">•</span>
-                      <span className={`${bodyFont.className} text-[#A0A0A0] italic`}>Additional insights available in full analysis...</span>
+                      <span className={`${bodyFont.className} text-[#777777]`}>Roosevelt Row submarket demonstrates stronger absorption relative to Downtown Core, with 15-20% faster lease-up velocity for comparable properties.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-[#E57161] mr-2">•</span>
+                      <span className={`${bodyFont.className} text-[#777777]`}>Competitive advantage opportunity identified in advanced technology integration, premium finishing levels, and authentic community programming – areas with limited current market penetration.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-[#E57161] mr-2">•</span>
+                      <span className={`${bodyFont.className} text-[#777777]`}>Target demographic analysis reveals three high-potential segments: Urban Professionals (32-45, $95K+ income), Creative Class (25-38, $75K+ income), and Empty Nesters (52-65, $120K+ income) with specific lifestyle preferences and high propensity to rent.</span>
                     </li>
                   </ul>
                 </div>
                 
-                <div className="text-right">
-                  <Button 
-                    variant="outline"
-                    disabled
-                    className="text-[#E57161] border-[#E57161] font-medium px-5 py-2 rounded-sm tracking-wide uppercase text-xs flex items-center ml-auto cursor-not-allowed opacity-80"
-                  >
-                    <span>Access Full Analysis</span>
-                    <ArrowRight className="h-3.5 w-3.5 ml-2" />
-                  </Button>
+                <div className="p-4 bg-[#FCFAF5] border border-[#E8E3D9] rounded-sm">
+                  <h4 className={`${headingFont.className} text-sm uppercase mb-2 text-[#333333]`}>Current Market Concessions</h4>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                      <p className="text-sm font-medium text-[#333333] mb-1">Downtown Core</p>
+                      <p className="text-sm text-[#777777]">4-8 weeks free on 12-month leases</p>
+                      <p className="text-xs text-[#999999] mt-1">Avg. effective discount: 8-15%</p>
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium text-[#333333] mb-1">Roosevelt Row</p>
+                      <p className="text-sm text-[#777777]">4-6 weeks free on 12-month leases</p>
+                      <p className="text-xs text-[#999999] mt-1">Avg. effective discount: 6-11%</p>
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium text-[#333333] mb-1">Midtown</p>
+                      <p className="text-sm text-[#777777]">6-8 weeks free on 12-month leases</p>
+                      <p className="text-xs text-[#999999] mt-1">Avg. effective discount: 10-16%</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -278,14 +357,14 @@ export default function ExecutiveSummary() {
               />
             </div>
             
-            {/* Premium SWOT CTA using consistent styling */}
+            {/* Detailed SWOT Analysis */}
             <div className="p-8 bg-white border border-[#E8E3D9] rounded-sm relative overflow-hidden mt-12">
               <div className="absolute -right-8 -bottom-8 w-32 h-32 rounded-full bg-[#E57161] opacity-5"></div>
               
               <div className="mb-4">
                 <h3 className={`${headingFont.className} text-lg uppercase tracking-wide text-[#333333] flex items-center`}>
                   <ArrowRight className="h-4 w-4 mr-2 text-[#E57161]" />
-                  SWOT SUMMARY
+                  DETAILED SWOT ANALYSIS
                 </h3>
               </div>
               
@@ -294,28 +373,77 @@ export default function ExecutiveSummary() {
               </p>
               
               <div className="mb-6">
-                <h5 className={`${headingFont.className} text-sm uppercase tracking-wide mb-3 text-[#555555]`}>Full Analysis Includes:</h5>
+                <h5 className={`${headingFont.className} text-sm uppercase tracking-wide mb-3 text-[#555555]`}>Strengths - Expanded Analysis:</h5>
                 <ul className="space-y-2">
                   <li className="flex items-start">
                     <span className="text-[#E57161] mr-2">•</span>
-                    <span className={`${bodyFont.className} text-[#777777]`}>Detailed competitor-specific response strategies for each weakness</span>
+                    <span className={`${bodyFont.className} text-[#777777]`}><span className="font-medium">Prime Location:</span> SOL Modern's position in the heart of Roosevelt Row provides exceptional access to the arts district, dining, and cultural amenities, with walkability scores 22% higher than competitive set average.</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-[#E57161] mr-2">•</span>
-                    <span className={`${bodyFont.className} text-[#777777]`}>Comprehensive risk mitigation planning for identified threats</span>
+                    <span className={`${bodyFont.className} text-[#777777]`}><span className="font-medium">Newest Delivery:</span> As the newest property delivering in 2025, SOL Modern features the most current design trends, technology infrastructure, and energy efficiency systems, contrasting with properties averaging 3.5 years since delivery.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#E57161] mr-2">•</span>
+                    <span className={`${bodyFont.className} text-[#777777]`}><span className="font-medium">Premium Finishes:</span> Superior unit finishes and amenity offerings position SOL Modern at the top tier of the market, with distinction in sound insulation and smart home technology features.</span>
                   </li>
                 </ul>
               </div>
               
-              <div className="text-right">
-                <Button 
-                  variant="outline"
-                  onClick={() => {}}
-                  className="text-[#E57161] border-[#E57161] hover:bg-[#E57161] hover:bg-opacity-5 font-medium px-5 py-2 rounded-sm tracking-wide uppercase text-xs flex items-center ml-auto"
-                >
-                  <span>Access Full Analysis</span>
-                  <ArrowRight className="h-3.5 w-3.5 ml-2" />
-                </Button>
+              <div className="mb-6">
+                <h5 className={`${headingFont.className} text-sm uppercase tracking-wide mb-3 text-[#555555]`}>Weaknesses - Risk Mitigation Strategies:</h5>
+                <ul className="space-y-2">
+                  <li className="flex items-start">
+                    <span className="text-[#E57161] mr-2">•</span>
+                    <span className={`${bodyFont.className} text-[#777777]`}><span className="font-medium">Elevated Vacancy:</span> Counteract market vacancy rates with pre-leasing incentives structured for early signings, targeting 15% pre-leased before opening with progressive incentive tiers.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#E57161] mr-2">•</span>
+                    <span className={`${bodyFont.className} text-[#777777]`}><span className="font-medium">New Supply:</span> Differentiate from competing new supply through experience-focused positioning, amenity programming, and targeted marketing that highlights distinctive features.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#E57161] mr-2">•</span>
+                    <span className={`${bodyFont.className} text-[#777777]`}><span className="font-medium">Concession Environment:</span> Develop alternative incentive structures focused on added value rather than rent reduction, including technology packages, premium services, and membership benefits.</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h5 className={`${headingFont.className} text-sm uppercase tracking-wide mb-3 text-[#555555]`}>Opportunities - Strategic Approach:</h5>
+                  <ul className="space-y-2">
+                    <li className="flex items-start">
+                      <span className="text-[#E57161] mr-2">•</span>
+                      <span className={`${bodyFont.className} text-[#777777]`}><span className="font-medium">Remote Work Demand:</span> Capitalize with dedicated workspaces, enhanced technology infrastructure, and programming for remote professionals.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-[#E57161] mr-2">•</span>
+                      <span className={`${bodyFont.className} text-[#777777]`}><span className="font-medium">Arts Integration:</span> Establish artist residency program, rotating exhibitions, and cultural events to create authentic connection to Roosevelt Row identity.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-[#E57161] mr-2">•</span>
+                      <span className={`${bodyFont.className} text-[#777777]`}><span className="font-medium">Experience Design:</span> Implement distinctive community programming and resident services compared to competitors' limited offerings.</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h5 className={`${headingFont.className} text-sm uppercase tracking-wide mb-3 text-[#555555]`}>Threats - Contingency Planning:</h5>
+                  <ul className="space-y-2">
+                    <li className="flex items-start">
+                      <span className="text-[#E57161] mr-2">•</span>
+                      <span className={`${bodyFont.className} text-[#777777]`}><span className="font-medium">Continued Oversupply:</span> Develop tiered pricing strategy with flexibility to adjust to market conditions while preserving premium positioning.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-[#E57161] mr-2">•</span>
+                      <span className={`${bodyFont.className} text-[#777777]`}><span className="font-medium">Concession Escalation:</span> Create multi-phase contingency plans for increasing concessions that maintain relative position against competitive set.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-[#E57161] mr-2">•</span>
+                      <span className={`${bodyFont.className} text-[#777777]`}><span className="font-medium">Economic Uncertainty:</span> Establish marketing flexibility with multiple campaign options for different economic scenarios.</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </section>
@@ -371,14 +499,14 @@ export default function ExecutiveSummary() {
                 Our tactical roadmap converts strategies into actionable steps with clear timelines, responsible parties, and success metrics.
               </p>
               
-              {/* Premium content teaser */}
+              {/* Detailed Implementation Blueprint */}
               <div className="p-8 bg-white border border-[#E8E3D9] rounded-sm relative overflow-hidden mt-8">
                 <div className="absolute -right-8 -bottom-8 w-32 h-32 rounded-full bg-[#E57161] opacity-5"></div>
                 
                 <div className="mb-4">
                   <h3 className={`${headingFont.className} text-lg uppercase tracking-wide text-[#333333] flex items-center`}>
                     <ArrowRight className="h-4 w-4 mr-2 text-[#E57161]" />
-                    EXECUTION BLUEPRINT
+                    COMPLETE EXECUTION BLUEPRINT
                   </h3>
                 </div>
                 
@@ -386,33 +514,179 @@ export default function ExecutiveSummary() {
                   Our detailed implementation strategy provides a complete roadmap with staffing plans, timelines, and projected ROI metrics for each strategic initiative.
                 </p>
                 
-                <div className="mb-6">
-                  <h5 className={`${headingFont.className} text-sm uppercase tracking-wide mb-3 text-[#555555]`}>Key Components:</h5>
-                  <ul className="space-y-2">
-                    <li className="flex items-start">
-                      <span className="text-[#E57161] mr-2">•</span>
-                      <span className={`${bodyFont.className} text-[#777777]`}>Three-phase implementation approach for optimal market entry</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-[#E57161] mr-2">•</span>
-                      <span className={`${bodyFont.className} text-[#777777]`}>Proprietary service model with measurable performance metrics</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-[#E57161] mr-2">•</span>
-                      <span className={`${bodyFont.className} text-[#A0A0A0] italic`}>Detailed analysis available in full executive blueprint</span>
-                    </li>
-                  </ul>
+                <div className="mb-8">
+                  <h5 className={`${headingFont.className} text-sm uppercase tracking-wide mb-4 text-[#555555]`}>Three-Phase Implementation Approach:</h5>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="bg-[#FCFAF5] p-4 border border-[#E8E3D9] rounded-sm">
+                      <div className="w-8 h-8 rounded-full bg-[#F8F0EA] flex items-center justify-center mb-3">
+                        <span className="text-[#E57161] text-sm font-bold">1</span>
+                      </div>
+                      <h6 className={`${headingFont.className} text-sm mb-2 text-[#333333]`}>PRE-LAUNCH PHASE</h6>
+                      <p className="text-xs text-[#777777] mb-1">6 months pre-opening</p>
+                      <ul className="space-y-1.5 mt-3">
+                        <li className="flex items-start">
+                          <span className="text-[#E57161] mr-1.5 text-xs">•</span>
+                          <span className="text-xs text-[#777777]">Establish premium brand identity across all touchpoints</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-[#E57161] mr-1.5 text-xs">•</span>
+                          <span className="text-xs text-[#777777]">Launch digital presence with distinctive content strategy</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-[#E57161] mr-1.5 text-xs">•</span>
+                          <span className="text-xs text-[#777777]">Develop strategic local partnerships for resident benefits</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-[#E57161] mr-1.5 text-xs">•</span>
+                          <span className="text-xs text-[#777777]">Design pre-leasing incentive structure with early-bird benefits</span>
+                        </li>
+                      </ul>
+                    </div>
+                    
+                    <div className="bg-[#FCFAF5] p-4 border border-[#E8E3D9] rounded-sm">
+                      <div className="w-8 h-8 rounded-full bg-[#F8F0EA] flex items-center justify-center mb-3">
+                        <span className="text-[#E57161] text-sm font-bold">2</span>
+                      </div>
+                      <h6 className={`${headingFont.className} text-sm mb-2 text-[#333333]`}>LAUNCH PHASE</h6>
+                      <p className="text-xs text-[#777777] mb-1">Opening to 6 months</p>
+                      <ul className="space-y-1.5 mt-3">
+                        <li className="flex items-start">
+                          <span className="text-[#E57161] mr-1.5 text-xs">•</span>
+                          <span className="text-xs text-[#777777]">Implement premium service model with hospitality-trained staff</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-[#E57161] mr-1.5 text-xs">•</span>
+                          <span className="text-xs text-[#777777]">Execute high-visibility marketing campaign with digital focus</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-[#E57161] mr-1.5 text-xs">•</span>
+                          <span className="text-xs text-[#777777]">Launch signature community events and programming</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-[#E57161] mr-1.5 text-xs">•</span>
+                          <span className="text-xs text-[#777777]">Activate artist residency program with public installations</span>
+                        </li>
+                      </ul>
+                    </div>
+                    
+                    <div className="bg-[#FCFAF5] p-4 border border-[#E8E3D9] rounded-sm">
+                      <div className="w-8 h-8 rounded-full bg-[#F8F0EA] flex items-center justify-center mb-3">
+                        <span className="text-[#E57161] text-sm font-bold">3</span>
+                      </div>
+                      <h6 className={`${headingFont.className} text-sm mb-2 text-[#333333]`}>STABILIZATION PHASE</h6>
+                      <p className="text-xs text-[#777777] mb-1">6-12 months post-opening</p>
+                      <ul className="space-y-1.5 mt-3">
+                        <li className="flex items-start">
+                          <span className="text-[#E57161] mr-1.5 text-xs">•</span>
+                          <span className="text-xs text-[#777777]">Transition to targeted marketing for remaining unit types</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-[#E57161] mr-1.5 text-xs">•</span>
+                          <span className="text-xs text-[#777777]">Optimize pricing strategy based on absorption analytics</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-[#E57161] mr-1.5 text-xs">•</span>
+                          <span className="text-xs text-[#777777]">Implement resident retention program with loyalty benefits</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-[#E57161] mr-1.5 text-xs">•</span>
+                          <span className="text-xs text-[#777777]">Initiate premium service add-ons for ancillary revenue</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
                 
-                <div className="text-right">
-                  <Button 
-                    variant="outline"
-                    onClick={() => {}}
-                    className="text-[#E57161] border-[#E57161] hover:bg-[#E57161] hover:bg-opacity-5 font-medium px-5 py-2 rounded-sm tracking-wide uppercase text-xs flex items-center ml-auto"
-                  >
-                    <span>Access Full Blueprint</span>
-                    <ArrowRight className="h-3.5 w-3.5 ml-2" />
-                  </Button>
+                <div className="bg-[#FCFAF5] p-5 border border-[#E8E3D9] rounded-sm mb-6">
+                  <h5 className={`${headingFont.className} text-sm uppercase tracking-wide mb-3 text-[#555555]`}>Proprietary Service Model</h5>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <h6 className="text-sm font-medium text-[#333333] mb-2">Key Service Components</h6>
+                      <ul className="space-y-1.5">
+                        <li className="flex items-start">
+                          <span className="text-[#E57161] mr-1.5 text-xs">•</span>
+                          <span className="text-sm text-[#777777]">Resident Experience Team with hospitality training</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-[#E57161] mr-1.5 text-xs">•</span>
+                          <span className="text-sm text-[#777777]">4-hour service response guarantee for all requests</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-[#E57161] mr-1.5 text-xs">•</span>
+                          <span className="text-sm text-[#777777]">White-glove move-in experience with welcome gifts</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-[#E57161] mr-1.5 text-xs">•</span>
+                          <span className="text-sm text-[#777777]">Resident mobile app with premium service access</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h6 className="text-sm font-medium text-[#333333] mb-2">Performance Metrics</h6>
+                      <ul className="space-y-1.5">
+                        <li className="flex items-start">
+                          <span className="text-[#E57161] mr-1.5 text-xs">•</span>
+                          <span className="text-sm text-[#777777]">90% resident satisfaction score target</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-[#E57161] mr-1.5 text-xs">•</span>
+                          <span className="text-sm text-[#777777]">Under 5% service standard failure rate</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-[#E57161] mr-1.5 text-xs">•</span>
+                          <span className="text-sm text-[#777777]">75% renewal rate for first-term residents</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-[#E57161] mr-1.5 text-xs">•</span>
+                          <span className="text-sm text-[#777777]">4.8/5.0 average rating across review platforms</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-[#FCFAF5] p-5 border border-[#E8E3D9] rounded-sm">
+                  <h5 className={`${headingFont.className} text-sm uppercase tracking-wide mb-3 text-[#555555]`}>Financial Projections</h5>
+                  
+                  <div className="overflow-x-auto">
+                    <table className="w-full min-w-full">
+                      <thead>
+                        <tr className="bg-white">
+                          <th className="text-xs font-medium text-[#333333] p-2 text-left border-b border-[#E8E3D9]">Metric</th>
+                          <th className="text-xs font-medium text-[#333333] p-2 text-center border-b border-[#E8E3D9]">Standard Approach</th>
+                          <th className="text-xs font-medium text-[#333333] p-2 text-center border-b border-[#E8E3D9]">Recommended Strategy</th>
+                          <th className="text-xs font-medium text-[#333333] p-2 text-right border-b border-[#E8E3D9]">Improvement</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td className="text-xs text-[#333333] p-2 text-left border-b border-[#E8E3D9]">Stabilization Timeline</td>
+                          <td className="text-xs text-[#777777] p-2 text-center border-b border-[#E8E3D9]">12.5 months</td>
+                          <td className="text-xs text-[#777777] p-2 text-center border-b border-[#E8E3D9]">9-9.5 months</td>
+                          <td className="text-xs text-[#E57161] font-medium p-2 text-right border-b border-[#E8E3D9]">~25% faster</td>
+                        </tr>
+                        <tr>
+                          <td className="text-xs text-[#333333] p-2 text-left border-b border-[#E8E3D9]">Concession Value</td>
+                          <td className="text-xs text-[#777777] p-2 text-center border-b border-[#E8E3D9]">6-8 weeks free</td>
+                          <td className="text-xs text-[#777777] p-2 text-center border-b border-[#E8E3D9]">4-6 weeks free</td>
+                          <td className="text-xs text-[#E57161] font-medium p-2 text-right border-b border-[#E8E3D9]">~30% savings</td>
+                        </tr>
+                        <tr>
+                          <td className="text-xs text-[#333333] p-2 text-left border-b border-[#E8E3D9]">Year 1 Revenue</td>
+                          <td className="text-xs text-[#777777] p-2 text-center border-b border-[#E8E3D9]">$14.2M</td>
+                          <td className="text-xs text-[#777777] p-2 text-center border-b border-[#E8E3D9]">$16.8M</td>
+                          <td className="text-xs text-[#E57161] font-medium p-2 text-right border-b border-[#E8E3D9]">+$2.6M (+18.3%)</td>
+                        </tr>
+                        <tr>
+                          <td className="text-xs text-[#333333] p-2 text-left">Renewal Rate</td>
+                          <td className="text-xs text-[#777777] p-2 text-center">55-60%</td>
+                          <td className="text-xs text-[#777777] p-2 text-center">70-75%</td>
+                          <td className="text-xs text-[#E57161] font-medium p-2 text-right">+15% higher</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
             </div>
