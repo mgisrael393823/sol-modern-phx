@@ -23,9 +23,9 @@ const navItems = [
   { name: 'EXECUTIVE SUMMARY', path: '/executive-summary', icon: BookOpen },
   { name: 'MARKET INTELLIGENCE', path: '/market-intelligence', icon: BarChart2 },
   { name: 'COMPETITIVE LANDSCAPE', path: '/competitive-landscape', icon: Target },
-  { name: 'STRATEGIC OPPORTUNITIES', path: '/strategic-opportunities', icon: Lightbulb, gated: true },
-  { name: 'PRICING & INCENTIVES', path: '/pricing-framework', icon: DollarSign, gated: true },
-  { name: 'GO-TO-MARKET ROADMAP', path: '/go-to-market', icon: Rocket, gated: true },
+  { name: 'STRATEGIC OPPORTUNITIES', path: '/strategic-opportunities', icon: Lightbulb },
+  { name: 'PRICING & INCENTIVES', path: '/pricing-framework', icon: DollarSign },
+  { name: 'GO-TO-MARKET ROADMAP', path: '/go-to-market', icon: Rocket },
   { name: 'OPPORTUNITY MAP', path: '/opportunity-map', icon: Map },
 ];
 
